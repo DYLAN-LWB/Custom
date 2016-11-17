@@ -70,6 +70,7 @@
 }
 
 - (void)requestSuccess:(id)response {
+    
     [_listAM addObjectsFromArray:[ListModel mj_objectArrayWithKeyValuesArray:response[@"data"]]];
     [_tableView reloadData];
 }
@@ -103,6 +104,5 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 
 @end

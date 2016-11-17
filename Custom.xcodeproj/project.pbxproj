@@ -27,6 +27,8 @@
 		521C14391DC6DB6C00CD78B3 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 521C14231DC6DB6C00CD78B3 /* UIScrollView+MJExtension.m */; };
 		521C143A1DC6DB6C00CD78B3 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 521C14251DC6DB6C00CD78B3 /* UIScrollView+MJRefresh.m */; };
 		521C143B1DC6DB6C00CD78B3 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 521C14271DC6DB6C00CD78B3 /* UIView+MJExtension.m */; };
+		5236E2601DD0475900D8B1B1 /* WBBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5236E25F1DD0475900D8B1B1 /* WBBlockViewController.m */; };
+		5236E2631DD0508A00D8B1B1 /* WBBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5236E2621DD0508A00D8B1B1 /* WBBlockView.m */; };
 		527F32E41DC33B420023F4B7 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F32E31DC33B420023F4B7 /* ListViewController.m */; };
 		527F32E71DC33B570023F4B7 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F32E61DC33B570023F4B7 /* ListTableViewCell.m */; };
 		527F32EA1DC33B630023F4B7 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F32E91DC33B630023F4B7 /* ListModel.m */; };
@@ -159,6 +161,10 @@
 		521C14251DC6DB6C00CD78B3 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		521C14261DC6DB6C00CD78B3 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		521C14271DC6DB6C00CD78B3 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		5236E25E1DD0475900D8B1B1 /* WBBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBlockViewController.h; sourceTree = "<group>"; };
+		5236E25F1DD0475900D8B1B1 /* WBBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBlockViewController.m; sourceTree = "<group>"; };
+		5236E2611DD0508A00D8B1B1 /* WBBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBlockView.h; sourceTree = "<group>"; };
+		5236E2621DD0508A00D8B1B1 /* WBBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBlockView.m; sourceTree = "<group>"; };
 		527F32E21DC33B420023F4B7 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		527F32E31DC33B420023F4B7 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		527F32E51DC33B570023F4B7 /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
@@ -413,6 +419,17 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		5236E25D1DD0473C00D8B1B1 /* WBBlock */ = {
+			isa = PBXGroup;
+			children = (
+				5236E25E1DD0475900D8B1B1 /* WBBlockViewController.h */,
+				5236E25F1DD0475900D8B1B1 /* WBBlockViewController.m */,
+				5236E2611DD0508A00D8B1B1 /* WBBlockView.h */,
+				5236E2621DD0508A00D8B1B1 /* WBBlockView.m */,
+			);
+			path = WBBlock;
+			sourceTree = "<group>";
+		};
 		527F32E11DC33B2B0023F4B7 /* WBModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,13 +478,15 @@
 				52B0BB2C1DC339DB0068B412 /* RequestManager.m */,
 				52A4DB5B1DAF707A0034254C /* MenuViewController.h */,
 				52A4DB5C1DAF707A0034254C /* MenuViewController.m */,
-				527F32E11DC33B2B0023F4B7 /* WBModel */,
+				5236E25D1DD0473C00D8B1B1 /* WBBlock */,
+				52D7DC771DC88ACC00BE710E /* WBExtension */,
 				52C95B211DC03BF70073D90A /* WBFullScreenImage */,
 				52A4DB5E1DAF73CD0034254C /* WBAlertView */,
 				52A4DB5F1DAF73CD0034254C /* WBDropDownMenu */,
 				52A4DB601DAF73CD0034254C /* WBImageBrowser */,
 				52A4DB611DAF73CD0034254C /* WBPickerView */,
 				52A4DB621DAF73CD0034254C /* WBShareView */,
+				527F32E11DC33B2B0023F4B7 /* WBModel */,
 				52C95B251DC03C6A0073D90A /* Vendor */,
 				52A4DB441DAF6FF70034254C /* Supporting Files */,
 			);
@@ -702,6 +721,13 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		52D7DC771DC88ACC00BE710E /* WBExtension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WBExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -733,6 +759,7 @@
 				TargetAttributes = {
 					52A4DB401DAF6FF70034254C = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -835,6 +862,7 @@
 				521C14301DC6DB6C00CD78B3 /* MJRefreshBackGifFooter.m in Sources */,
 				52A4DB5D1DAF707A0034254C /* MenuViewController.m in Sources */,
 				52C95B4E1DC03C6A0073D90A /* UIImageView+WebCache.m in Sources */,
+				5236E2601DD0475900D8B1B1 /* WBBlockViewController.m in Sources */,
 				52C95B6E1DC041680073D90A /* AFNetworkReachabilityManager.m in Sources */,
 				52B0BB121DC337940068B412 /* MJPropertyType.m in Sources */,
 				527F32FB1DC344D00023F4B7 /* WBImageBrowserViewController.m in Sources */,
@@ -863,6 +891,7 @@
 				52C95B711DC041680073D90A /* AFURLRequestSerialization.m in Sources */,
 				521C14341DC6DB6C00CD78B3 /* MJRefreshNormalHeader.m in Sources */,
 				52C95B6B1DC041680073D90A /* AFHTTPRequestOperationManager.m in Sources */,
+				5236E2631DD0508A00D8B1B1 /* WBBlockView.m in Sources */,
 				521C14311DC6DB6C00CD78B3 /* MJRefreshBackNormalFooter.m in Sources */,
 				52C95B451DC03C6A0073D90A /* SDWebImageCompat.m in Sources */,
 				52A4DB671DAF7C7D0034254C /* WBAlertViewController.m in Sources */,
@@ -988,6 +1017,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = /Users/dylan/Desktop/Custom/Custom/PrefixHeader.pch;
 				INFOPLIST_FILE = Custom/Info.plist;
@@ -1000,6 +1030,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liweibin.Custom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Custom/Swift/Custom-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1007,6 +1040,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = /Users/dylan/Desktop/Custom/Custom/PrefixHeader.pch;
 				INFOPLIST_FILE = Custom/Info.plist;
@@ -1019,6 +1053,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.liweibin.Custom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Custom/Swift/Custom-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

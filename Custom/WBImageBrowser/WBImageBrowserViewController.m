@@ -33,8 +33,6 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
     [imageView addGestureRecognizer:tap];
     
-    
-    
     [[RequestManager sharedManger] requestWithMethod:HTTP_GET
                                                  url:@"http://shop.51titi.net/showbooks/photolist/uid/3/key/5e874c8f133f9fa3ffa8be397cae8c30/sbid/5"
                                               params:nil
@@ -47,9 +45,7 @@
                                              }
                                              failure:^(NSError *error) {
                                              }];
-    
 }
-
 
 - (void)tap {
     [WBImageBrowserView clearImagesCache];
