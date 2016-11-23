@@ -16,6 +16,10 @@
 
 #import "WBAlertView.h"
 
+
+
+#import "Custom-Swift.h"
+
 @interface MenuViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *menuArray;
@@ -31,7 +35,7 @@
     self.title = @"菜单";
     self.view.backgroundColor = [UIColor whiteColor];
 
-    self.menuArray = @[@"WBAlertView",  @"WBFullScreenImage", @"WBDropDownMenu", @"WBImageBrowser", @"WBPickerView", @"WBShareView",@"WBModel",@"WBBlock"];
+    self.menuArray = @[@"WBAlertView",  @"WBFullScreenImage", @"WBDropDownMenu", @"WBImageBrowser", @"WBPickerView", @"WBShareView",@"WBModel",@"WBBlock",@"WBSwift"];
      
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     self.tableView.delegate = self;
@@ -108,6 +112,15 @@
             sub = subViewController;
         }
             break;
+        case 8: {
+
+            WBSwiftViewController *subViewController = [[WBSwiftViewController alloc] init];
+            subViewController.title = @"Swift-Test";
+            sub = subViewController;
+
+        }
+            break;
+
         default:
             break;
     }

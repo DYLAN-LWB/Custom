@@ -57,6 +57,7 @@
 		52B0BB161DC337940068B412 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B0BADD1DC337940068B412 /* NSObject+MJProperty.m */; };
 		52B0BB171DC337940068B412 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B0BADF1DC337940068B412 /* NSString+MJExtension.m */; };
 		52B0BB2D1DC339DB0068B412 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B0BB2C1DC339DB0068B412 /* RequestManager.m */; };
+		52C2D9AC1DE54376003A80B3 /* WBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C2D9AB1DE54376003A80B3 /* WBNetwork.swift */; };
 		52C95B241DC03C0F0073D90A /* WBFullScreenImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C95B231DC03C0F0073D90A /* WBFullScreenImage.m */; };
 		52C95B421DC03C6A0073D90A /* NSData+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C95B281DC03C6A0073D90A /* NSData+GIF.m */; };
 		52C95B431DC03C6A0073D90A /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C95B2A1DC03C6A0073D90A /* NSData+ImageContentType.m */; };
@@ -118,6 +119,8 @@
 		52CD4E471DC3496000CB01BA /* icon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52CD4E461DC3496000CB01BA /* icon_back@2x.png */; };
 		52CD4E491DC3497900CB01BA /* photo_down_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52CD4E481DC3497900CB01BA /* photo_down_btn@2x.png */; };
 		52CD4E4B1DC3498C00CB01BA /* photo_share_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52CD4E4A1DC3498C00CB01BA /* photo_share_btn@2x.png */; };
+		52D03AA91DE3F14900EEF571 /* WBSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D03AA81DE3F14900EEF571 /* WBSwiftViewController.swift */; };
+		52D03AAC1DE41F2100EEF571 /* WBSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D03AAB1DE41F2100EEF571 /* WBSwiftView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,6 +224,7 @@
 		52B0BB2B1DC339DB0068B412 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
 		52B0BB2C1DC339DB0068B412 /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
 		52B0BB2E1DC339E90068B412 /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		52C2D9AB1DE54376003A80B3 /* WBNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetwork.swift; sourceTree = "<group>"; };
 		52C95B221DC03C0F0073D90A /* WBFullScreenImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBFullScreenImage.h; sourceTree = "<group>"; };
 		52C95B231DC03C0F0073D90A /* WBFullScreenImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBFullScreenImage.m; sourceTree = "<group>"; };
 		52C95B271DC03C6A0073D90A /* NSData+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GIF.h"; sourceTree = "<group>"; };
@@ -311,6 +315,9 @@
 		52CD4E461DC3496000CB01BA /* icon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_back@2x.png"; sourceTree = "<group>"; };
 		52CD4E481DC3497900CB01BA /* photo_down_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_down_btn@2x.png"; sourceTree = "<group>"; };
 		52CD4E4A1DC3498C00CB01BA /* photo_share_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_share_btn@2x.png"; sourceTree = "<group>"; };
+		52D03AA81DE3F14900EEF571 /* WBSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSwiftViewController.swift; sourceTree = "<group>"; };
+		52D03AAA1DE3F17800EEF571 /* Custom-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Custom-Bridging-Header.h"; sourceTree = "<group>"; };
+		52D03AAB1DE41F2100EEF571 /* WBSwiftView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSwiftView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,6 +465,7 @@
 			children = (
 				52A4DB431DAF6FF70034254C /* Custom */,
 				52A4DB421DAF6FF70034254C /* Products */,
+				C8FDE3D1DA4FB28E9283C8A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -478,6 +486,7 @@
 				52B0BB2C1DC339DB0068B412 /* RequestManager.m */,
 				52A4DB5B1DAF707A0034254C /* MenuViewController.h */,
 				52A4DB5C1DAF707A0034254C /* MenuViewController.m */,
+				52D03AA71DE3F12E00EEF571 /* WBSwift */,
 				5236E25D1DD0473C00D8B1B1 /* WBBlock */,
 				52D7DC771DC88ACC00BE710E /* WBExtension */,
 				52C95B211DC03BF70073D90A /* WBFullScreenImage */,
@@ -721,11 +730,29 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		52D03AA71DE3F12E00EEF571 /* WBSwift */ = {
+			isa = PBXGroup;
+			children = (
+				52D03AAA1DE3F17800EEF571 /* Custom-Bridging-Header.h */,
+				52C2D9AB1DE54376003A80B3 /* WBNetwork.swift */,
+				52D03AA81DE3F14900EEF571 /* WBSwiftViewController.swift */,
+				52D03AAB1DE41F2100EEF571 /* WBSwiftView.swift */,
+			);
+			path = WBSwift;
+			sourceTree = "<group>";
+		};
 		52D7DC771DC88ACC00BE710E /* WBExtension */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = WBExtension;
+			sourceTree = "<group>";
+		};
+		C8FDE3D1DA4FB28E9283C8A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -853,6 +880,7 @@
 				52C95B6A1DC041680073D90A /* AFHTTPRequestOperation.m in Sources */,
 				527F32E71DC33B570023F4B7 /* ListTableViewCell.m in Sources */,
 				52C95B431DC03C6A0073D90A /* NSData+ImageContentType.m in Sources */,
+				52D03AAC1DE41F2100EEF571 /* WBSwiftView.swift in Sources */,
 				521C142D1DC6DB6C00CD78B3 /* MJRefreshAutoGifFooter.m in Sources */,
 				521C14391DC6DB6C00CD78B3 /* UIScrollView+MJExtension.m in Sources */,
 				521C14291DC6DB6C00CD78B3 /* MJRefreshBackFooter.m in Sources */,
@@ -904,8 +932,10 @@
 				521C14321DC6DB6C00CD78B3 /* MJRefreshBackStateFooter.m in Sources */,
 				52A4DB461DAF6FF70034254C /* main.m in Sources */,
 				52B0BB171DC337940068B412 /* NSString+MJExtension.m in Sources */,
+				52D03AA91DE3F14900EEF571 /* WBSwiftViewController.swift in Sources */,
 				52B0BB2D1DC339DB0068B412 /* RequestManager.m in Sources */,
 				52C95B4D1DC03C6A0073D90A /* UIImage+MultiFormat.m in Sources */,
+				52C2D9AC1DE54376003A80B3 /* WBNetwork.swift in Sources */,
 				52C95B4C1DC03C6A0073D90A /* UIImage+GIF.m in Sources */,
 				52B0BB0F1DC337940068B412 /* MJFoundation.m in Sources */,
 			);
@@ -1018,19 +1048,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = /Users/dylan/Desktop/Custom/Custom/PrefixHeader.pch;
 				INFOPLIST_FILE = Custom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Custom/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
-					"$(PROJECT_DIR)/Custom/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liweibin.Custom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Custom/Swift/Custom-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Custom/WBSwift/Custom-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1041,19 +1068,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = /Users/dylan/Desktop/Custom/Custom/PrefixHeader.pch;
 				INFOPLIST_FILE = Custom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Custom/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
-					"$(PROJECT_DIR)/Custom/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liweibin.Custom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Custom/Swift/Custom-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Custom/WBSwift/Custom-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
