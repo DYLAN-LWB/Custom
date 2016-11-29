@@ -33,18 +33,20 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
     [imageView addGestureRecognizer:tap];
     
-    [[RequestManager sharedManger] requestWithMethod:HTTP_GET
-                                                 url:@"http://shop.51titi.net/showbooks/photolist/uid/3/key/5e874c8f133f9fa3ffa8be397cae8c30/sbid/5"
-                                              params:nil
-                                             success:^(id response) {
-                                                 NSLog(@"%@", response);
-                                                 if ([response[@"code"] integerValue] == 0) {
-                                                     
-                                                     [_imageAM addObjectsFromArray:response[@"data"][0][@"content"]];
-                                                 }
-                                             }
-                                             failure:^(NSError *error) {
-                                             }];
+    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+    dictM[@"sbid"]  = @"5";
+    
+    [RequestManager requestWithURLString:TEST2
+                              parameters:dictM
+                                    type:HttpRequestTypeGet
+                                 success:^(id response) {
+                                     if ([response[@"code"] integerValue] == 0) {
+                                         [_imageAM addObjectsFromArray:response[@"data"][0][@"content"]];
+                                     }
+                                 }
+                                 failure:^(NSError *error) {
+                                     WBShowToastMessage(ErrorMsg);
+                                 }];
 }
 
 - (void)tap {

@@ -34,7 +34,6 @@
     
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [_tableView.mj_footer endRefreshing];
-
         _pageNumber = 1;
         [self getDataWithPageNumber:_pageNumber];
     }];
@@ -43,36 +42,36 @@
     
     _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [_tableView.mj_header endRefreshing];
-        [self getDataWithPageNumber:_pageNumber++];
+        [self getDataWithPageNumber:++_pageNumber];
     }];
 }
 
 - (void)getDataWithPageNumber:(NSInteger)page {
     
-    NSString *url = [NSString stringWithFormat:@"http://shop.51titi.net/showbooks/listbooks/uid/3/key/5e874c8f133f9fa3ffa8be397cae8c30/sbid/5/num/1/page/%ld", page];
+    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+    dictM[@"type"]  = @"2";
+    dictM[@"p"]     = WBIntegerString(page);
     
-    [[RequestManager sharedManger] requestWithMethod:HTTP_GET
-                                                 url:url
-                                              params:nil
-                                             success:^(id response) {
-                                                 NSLog(@"%@", response);
-                                                 if ([response[@"code"] integerValue] == 0) {
-                                                     
-                                                     [self requestSuccess:response];
-                                                 }
-                                                 [_tableView.mj_header endRefreshing];
-                                                 [_tableView.mj_footer endRefreshing];
-                                             }
-                                             failure:^(NSError *error) {
-                                                 [_tableView.mj_header endRefreshing];
-                                                 [_tableView.mj_footer endRefreshing];
-                                             }];
-}
-
-- (void)requestSuccess:(id)response {
-    
-    [_listAM addObjectsFromArray:[ListModel mj_objectArrayWithKeyValuesArray:response[@"data"]]];
-    [_tableView reloadData];
+    [RequestManager requestWithURLString:TEST1
+                              parameters:dictM
+                                    type:HttpRequestTypeGet
+                                 success:^(id response) {
+                                     
+                                     if (WBInteger(response[@"code"]) == 0) {
+                                         [_listAM addObjectsFromArray:[ListModel mj_objectArrayWithKeyValuesArray:response[@"data"]]];
+                                         [_tableView reloadData];
+                                     } else {
+                                         WBShowToastMessage(response[@"msg"]);
+                                     }
+                                     
+                                     [_tableView.mj_header endRefreshing];
+                                     [_tableView.mj_footer endRefreshing];
+                                 }
+                                 failure:^(NSError *error) {
+                                     WBShowToastMessage(ErrorMsg);
+                                     [_tableView.mj_header endRefreshing];
+                                     [_tableView.mj_footer endRefreshing];
+                                 }];
 }
 
 #pragma mark - tableview

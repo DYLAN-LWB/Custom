@@ -33,6 +33,10 @@ class WBSwiftViewController: UIViewController, testDelegate {
         print(a)
         print(b)
         print(c.tag);
+        
+        let subVC = WBSwiftTableViewController()
+        self.navigationController?.pushViewController(subVC, animated: true)
+        
     }
     
     

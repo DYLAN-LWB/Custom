@@ -114,7 +114,7 @@
             break;
         case 8: {
 
-            WBSwiftViewController *subViewController = [[WBSwiftViewController alloc] init];
+            WBSwiftTableViewController *subViewController = [[WBSwiftTableViewController alloc] init];
             subViewController.title = @"Swift-Test";
             sub = subViewController;
 

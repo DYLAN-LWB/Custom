@@ -7,41 +7,85 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFNetworking.h"
 
-typedef void(^uploadProgress)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite);
+
+@interface FileModel : NSObject
+
+/** 服务器给的字段名称*/
+@property(nonatomic, copy) NSString *name;
+/** 图片数据 */
+@property(nonatomic, strong) NSData *fileData;
+
++ (instancetype)fileWithName:(NSString *)name data:(NSData *)data mimeType:(NSString *)mimeType filename:(NSString *)filename;
+
+@end
+
+/**
+ *  网络请求类型
+ */
+typedef NS_ENUM(NSUInteger,HttpRequestType) {
+
+    HttpRequestTypeGet = 0,     //get请求
+    HttpRequestTypePost         //post请求
+};
 
 @interface RequestManager : NSObject
 
-+ (RequestManager *)sharedManger;
+/**
+ *  发送网络请求
+ *
+ *  @param URLString   请求的网址字符串
+ *  @param parameters  请求的参数
+ *  @param type        请求的类型
+ *  @param success     上传成功的回调
+ *  @param failure     上传失败的回调
+ */
++ (NSURLSessionTask *)requestWithURLString:(NSString *)URLString
+                                parameters:(NSMutableDictionary *)parameters
+                                      type:(HttpRequestType)type
+                                   success:(void (^)(id response))success
+                                   failure:(void (^)(NSError *error))failure;
 
 /**
- *  请求接口
+ *  上传或者下载的进度
  *
- *  @param methodType 分为post和get
- *  @param url        请求的url
- *  @param params     请求的参数
- *  @param success    返回成功
- *  @param failure    返回失败
+ *  @param progress 进度
  */
-- (void)requestWithMethod:(NSString *)methodType
-                      url:(NSString *)url
-                   params:(NSDictionary *)params
-                  success:(void(^)(id response))success
-                  failure:(void(^)(NSError * error))failure;
+typedef void (^RequestProgress)(NSProgress *progress);
 
 /**
- *  上传单张图片
+ *  上传图片
  *
- *  @param imageData 图片二进制流 SData *imageData = UIImageJPEGRepresentation(image, 0.7);
- *  @param url       上传图片接口地址
- *  @param params    封装的参数,id,key等
- *  @param success   success description
- *  @param failure   failure description
+ *  @param URLString   上传图片的网址字符串
+ *  @param parameters  上传图片的参数
+ *  @param uploadParam 上传图片的信息
+ *  @param success     上传成功的回调
+ *  @param failure     上传失败的回调
  */
-- (void)uploadImageWithImageData:(NSData *)imageData
-                             url:(NSString *)url
-                          params:(NSDictionary *)params
-                         success:(void(^)(id response))success
-                         failure:(void(^)(NSError * error))failure;
++ (NSURLSessionTask *)uploadWithURLString:(NSString *)URLString
+                               parameters:(NSMutableDictionary *)parameters
+                                 progress:(RequestProgress)progress
+                              uploadParam:(FileModel *)uploadParam
+                                  success:(void (^)(id response))success
+                                  failure:(void (^)(NSError *error))failure;
+
+/**
+ *  下载文件
+ *
+ *  @param URLString 下载请求地址
+ *  @param fileURL   文件保存地址
+ *  @param progress  进度
+ *  @param success   请求成功回调
+ *  @param failure   请求失败回调
+ *
+ *  @return NSURLSessionDownloadTask实例，可用于暂停继续，暂停调用suspend方法，重新开启下载调用resume方法
+ */
++(NSURLSessionDownloadTask *)downloadWithURLString:(NSString *)URLString
+                                       savePathURL:(NSURL *)fileURL
+                                          progress:(RequestProgress )progress
+                                           success:(void (^)(id response))success
+                                           failure:(void (^)(NSError *error))failure;
+
 
 @end
