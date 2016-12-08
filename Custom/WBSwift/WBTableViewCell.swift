@@ -13,21 +13,15 @@ class WBTableViewCell: UITableViewCell {
     public var dict : NSDictionary? {
         didSet {
             if (dict != nil) {
-
-                print(dict!)
+                self.textLabel?.text = dict!["title"] as? String
             }
-//
-//            self.textLabel?.text = dict!["title"] as? String
-
         }
     }
-    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        self.backgroundColor = UIColor.red
+        self.selectionStyle = UITableViewCellSelectionStyle.none
         
         setUpviews()
         

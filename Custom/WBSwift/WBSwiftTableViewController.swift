@@ -11,8 +11,8 @@ import UIKit
 class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var myTableView = UITableView()
-    var dataArray = NSMutableArray()
-    var pageNumber = 1
+    var dataArray = NSMutableArray ()
+    var tempArray = NSArray ()
     
     let kUrl = "http://shop.51titi.net/showbooks/booklist/uid/3/key/de7f1f42282da6c604a882350909fd94"
     let parameters = [
@@ -31,17 +31,16 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
             
             if responseObj?["code"] as? Int == 0 {
                 
-                print(responseObj!["data"]!)
+                self.tempArray = responseObj!["data"]! as! NSArray
                 
-//                if self.pageNumber == 1 {
-//                    self.dataArray.removeAllObjects()
-//                }
+                for ( _ , value) in self.tempArray.enumerated() {
+                    
+                    self.dataArray.addObjects(from: [value])
+                }
                 
-                self.dataArray.addObjects(from: [responseObj!["data"]!])
-
                 self.myTableView.reloadData()
                 
-                print(self.dataArray)
+                print("数组个数为:\(self.dataArray.count)")
             }
             
         }) {(error) in
@@ -57,7 +56,6 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
         self.myTableView.dataSource = self
         self.view.addSubview(self.myTableView)
         self.myTableView.register(WBTableViewCell.self, forCellReuseIdentifier: "cell")
-
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,17 +69,7 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell:WBTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "cell") as? WBTableViewCell)!
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.dict = self.dataArray[indexPath.row] as? NSDictionary
-//        cell.textLabel?.text = "dfaf"
-//        print(self.dataArray[indexPath.row])
-
-//        print(indexPath.row)
-
-        
-//        print(cell.dict!)
-
-        
         return cell
     }
     
@@ -90,9 +78,9 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         
         let controller = WBSwiftViewController()
-//        controller.title = self.dataArray[indexPath.row]["title"] as? String
+        controller.title = (self.dataArray[indexPath.row] as! NSDictionary)["title"] as? String
         self.navigationController?.pushViewController(controller, animated: true)
     }
-    
+
     
 }
