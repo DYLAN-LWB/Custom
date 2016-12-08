@@ -8,6 +8,18 @@
 
 import UIKit
 
+
+let UserID    = "3"
+let UserKey   = "de7f1f42282da6c604a882350909fd94"
+let BasicUrl  = "http://shop.51titi.net"   // 线上测试环境
+
+func RequestName(name:String) -> String {
+   return (BasicUrl + "/" + name + "/uid/" + UserID + "/key/" + UserKey)
+}
+
+let port1  = RequestName(name: "showbooks/booklist")
+
+//工具类
 enum RequestType {
     case GET
     case POST
@@ -15,13 +27,11 @@ enum RequestType {
 
 class WBNetwork: AFHTTPSessionManager {
 
-
     static let shareInstance : WBNetwork = {
         let tool = WBNetwork()
         tool.responseSerializer.acceptableContentTypes?.insert("text/html")
         return tool
     }()
-    
     
     func request(requestType: RequestType, url : String, params: [String : Any], success: @escaping([String : Any]?) ->(),failure: @escaping( _ error : Error?) -> ()){
         //成功
@@ -33,7 +43,6 @@ class WBNetwork: AFHTTPSessionManager {
         let failureBlock = {(task : URLSessionDataTask?,error:Error) in
             failure(error)
         }
-        
         
         //GET
         if requestType == .GET {

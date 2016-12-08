@@ -11,43 +11,64 @@ import UIKit
 class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var myTableView = UITableView()
-    var dataArray = NSMutableArray ()
-    var tempArray = NSArray ()
+    var dataArray = NSMutableArray()
+    var tempArray = NSArray()
+    var pageNumber = 1
     
-    let kUrl = "http://shop.51titi.net/showbooks/booklist/uid/3/key/de7f1f42282da6c604a882350909fd94"
-    let parameters = [
-        "type": 2,
-        "p" : 1,
-    ]
+    var refreshControl:ZJRefreshControl!
     
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
         setupTableView()
+        setupRefreshAndLoad()
         
-        WBNetwork.shareInstance.request(requestType: .GET, url: kUrl, params: parameters, success: {(responseObj) in
+        //首次进入页面加载数据
+        self.getDataWithPage(page: self.pageNumber)
+    }
+    
+    func setupRefreshAndLoad() {
+        
+        refreshControl = ZJRefreshControl(scrollView: self.myTableView,refreshBlock: {
+            self.pageNumber = 1
+            self.getDataWithPage(page: self.pageNumber)
+        },loadmoreBlock: {
+            self.pageNumber += 1
+            self.getDataWithPage(page: self.pageNumber)
+        });
+        refreshControl.setTopOffset(-64);
+    }
+    
+    func getDataWithPage(page : NSInteger) {
+    
+        // 参数字典
+        let parameters = ["type" : 2, "p" : page]
+        
+        WBNetwork.shareInstance.request(requestType: .GET, url: port1, params: parameters, success: {(responseObj) in
             
             if responseObj?["code"] as? Int == 0 {
                 
-                self.tempArray = responseObj!["data"]! as! NSArray
+                if page == 1 && self.dataArray.count > 0 {
+                    self.dataArray.removeAllObjects()
+                }
                 
+                self.tempArray = responseObj!["data"]! as! NSArray
                 for ( _ , value) in self.tempArray.enumerated() {
-                    
                     self.dataArray.addObjects(from: [value])
                 }
                 
                 self.myTableView.reloadData()
-                
-                print("数组个数为:\(self.dataArray.count)")
             }
             
-        }) {(error) in
-            print(error!)
-        }
+        }) {(error) in print(error!) }
+        
+        self.refreshControl.endRefreshing();
+        self.refreshControl.endLoadingmore();
     }
-
     
     func setupTableView() {
         
@@ -56,6 +77,8 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
         self.myTableView.dataSource = self
         self.view.addSubview(self.myTableView)
         self.myTableView.register(WBTableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

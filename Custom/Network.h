@@ -15,13 +15,12 @@
 #define HTTP_GET     @"GET"
 
 #define WBUserID @"3"
-#define WBUserKey @"a25d1c97ac8a4508a42901822c6d6444"
+#define WBUserKey @"de7f1f42282da6c604a882350909fd94"
 
 
 #define BasicUrl @"http://shop.51titi.net"   // 线上测试环境
 
 #define RequestName(name)   [NSString stringWithFormat:@"%@/%@", BasicUrl, name]
-
 
 #define TEST1  RequestName(@"showbooks/booklist")
 #define TEST2  RequestName(@"showbooks/photolist")
