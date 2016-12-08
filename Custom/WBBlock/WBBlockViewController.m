@@ -27,7 +27,6 @@
     view.type1 = ^() {
     
         NSLog(@"type1");
-        
     };
     
     
@@ -47,8 +46,7 @@
     };
     
   
-    NSString *string = view.type3(@"+++");
-    NSLog(@"%@", string);
+
 
 }
 

@@ -46,18 +46,18 @@
     [fullImage show];
     
     // 上传图片
-    FileModel *file = [[FileModel alloc] init];
-    file.fileData = UIImageJPEGRepresentation([UIImage imageNamed:@"test"], 0.7);
-    file.name = @"服务器给的图片名称";
-    [RequestManager uploadWithURLString:@"上传图片的接口地址"
-                             parameters:nil
-                               progress:^(NSProgress *progress) {
-                               }
-                            uploadParam:file
-                                success:^(id response) {
-                                }
-                                failure:^(NSError *error) {
-                                }];
+//    FileModel *file = [[FileModel alloc] init];
+//    file.fileData = UIImageJPEGRepresentation([UIImage imageNamed:@"test"], 0.7);
+//    file.name = @"服务器给的图片名称";
+//    [RequestManager uploadWithURLString:@"上传图片的接口地址"
+//                             parameters:nil
+//                               progress:^(NSProgress *progress) {
+//                               }
+//                            uploadParam:file
+//                                success:^(id response) {
+//                                }
+//                                failure:^(NSError *error) {
+//                                }];
 }
 
 

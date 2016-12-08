@@ -36,14 +36,13 @@ class WBNetwork: AFHTTPSessionManager {
         
         
         //GET
-        if requestType == .GET{
+        if requestType == .GET {
             get(url, parameters: params, progress: nil, success: successBlock, failure: failureBlock)
         }
         
         //POST
-        if requestType == .POST{
+        if requestType == .POST {
             post(url, parameters: params, progress: nil, success: successBlock, failure: failureBlock)
         }
     }
-    
 }

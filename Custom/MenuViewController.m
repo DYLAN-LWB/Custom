@@ -44,7 +44,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-   return indexPath.row == 4 ? 122 : 50;
+   return 50;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -55,17 +55,7 @@
     
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     cell.textLabel.text = self.menuArray[indexPath.row];
-    if (indexPath.row == 4) {
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(221, 11, 111, 111)];
-        label.text = @" Copyright © 2016年 liweibin. All rights reserved.";
-        label.textColor = [UIColor redColor];
-        label.font = [UIFont systemFontOfSize:15];
-        label.textAlignment = NSTextAlignmentLeft;
-        label.numberOfLines = 0;
-        label.backgroundColor = [UIColor grayColor];
-        [cell.contentView addSubview:label];
-    }
+   
     return cell;
 }
 
@@ -108,7 +98,7 @@
         }
             break;
         case 7: {
-           WBBlockViewController *subViewController = [[WBBlockViewController alloc] init];
+            WBBlockViewController *subViewController = [[WBBlockViewController alloc] init];
             sub = subViewController;
         }
             break;

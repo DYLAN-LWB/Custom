@@ -12,6 +12,7 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
 
     var myTableView = UITableView()
     var dataArray = NSMutableArray()
+    var pageNumber = 1
     
     let kUrl = "http://shop.51titi.net/showbooks/booklist/uid/3/key/de7f1f42282da6c604a882350909fd94"
     let parameters = [
@@ -19,31 +20,29 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
         "p" : 1,
     ]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.red
-        
+        self.view.backgroundColor = UIColor.white
         
         setupTableView()
         
         WBNetwork.shareInstance.request(requestType: .GET, url: kUrl, params: parameters, success: {(responseObj) in
             
-            print(responseObj!["code"]!)
-            print(responseObj!["msg"]!)
-
             if responseObj?["code"] as? Int == 0 {
                 
                 print(responseObj!["data"]!)
-
-                self.dataArray.addObjects(from: [responseObj!["data"]!])
                 
+//                if self.pageNumber == 1 {
+//                    self.dataArray.removeAllObjects()
+//                }
+                
+                self.dataArray.addObjects(from: [responseObj!["data"]!])
 
                 self.myTableView.reloadData()
                 
                 print(self.dataArray)
-
             }
-            
             
         }) {(error) in
             print(error!)
@@ -51,12 +50,9 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     
-
-    
     func setupTableView() {
         
         self.myTableView = UITableView(frame: self.view.frame, style:UITableViewStyle.plain)
-        self.myTableView.backgroundColor = UIColor.blue
         self.myTableView.delegate = self
         self.myTableView.dataSource = self
         self.view.addSubview(self.myTableView)
@@ -69,10 +65,8 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return self.dataArray.count
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
@@ -82,7 +76,7 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
 //        cell.textLabel?.text = "dfaf"
 //        print(self.dataArray[indexPath.row])
 
-        print(indexPath.row)
+//        print(indexPath.row)
 
         
 //        print(cell.dict!)
