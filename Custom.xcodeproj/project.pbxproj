@@ -51,6 +51,7 @@
 		52A4DB5D1DAF707A0034254C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A4DB5C1DAF707A0034254C /* MenuViewController.m */; };
 		52A4DB671DAF7C7D0034254C /* WBAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A4DB661DAF7C7D0034254C /* WBAlertViewController.m */; };
 		52A4DB6A1DAF7E5E0034254C /* WBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A4DB691DAF7E5E0034254C /* WBAlertView.m */; };
+		52AA5D831DF00E9A00452A35 /* WBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA5D821DF00E9A00452A35 /* WBTableViewCell.swift */; };
 		52B0BB0D1DC337940068B412 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52B0BACA1DC337940068B412 /* Info.plist */; };
 		52B0BB0E1DC337940068B412 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B0BACD1DC337940068B412 /* MJExtensionConst.m */; };
 		52B0BB0F1DC337940068B412 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B0BACF1DC337940068B412 /* MJFoundation.m */; };
@@ -209,6 +210,7 @@
 		52A4DB661DAF7C7D0034254C /* WBAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBAlertViewController.m; sourceTree = "<group>"; };
 		52A4DB681DAF7E5E0034254C /* WBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBAlertView.h; sourceTree = "<group>"; };
 		52A4DB691DAF7E5E0034254C /* WBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBAlertView.m; sourceTree = "<group>"; };
+		52AA5D821DF00E9A00452A35 /* WBTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTableViewCell.swift; sourceTree = "<group>"; };
 		52B0BACA1DC337940068B412 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B0BACB1DC337940068B412 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
 		52B0BACC1DC337940068B412 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
@@ -720,6 +722,7 @@
 				52D03AA81DE3F14900EEF571 /* WBSwiftViewController.swift */,
 				52D03AAB1DE41F2100EEF571 /* WBSwiftView.swift */,
 				52E842EE1DE800500018FC3E /* WBSwiftTableViewController.swift */,
+				52AA5D821DF00E9A00452A35 /* WBTableViewCell.swift */,
 			);
 			path = WBSwift;
 			sourceTree = "<group>";
@@ -916,6 +919,7 @@
 				52C95B4D1DC03C6A0073D90A /* UIImage+MultiFormat.m in Sources */,
 				5287A1CF1DE6813900797608 /* AFURLRequestSerialization.m in Sources */,
 				52C2D9AC1DE54376003A80B3 /* WBNetwork.swift in Sources */,
+				52AA5D831DF00E9A00452A35 /* WBTableViewCell.swift in Sources */,
 				52C95B4C1DC03C6A0073D90A /* UIImage+GIF.m in Sources */,
 				5287A1CD1DE6813900797608 /* AFNetworkReachabilityManager.m in Sources */,
 				52B0BB0F1DC337940068B412 /* MJFoundation.m in Sources */,

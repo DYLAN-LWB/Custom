@@ -47,8 +47,8 @@
     };
     
   
-//    NSString *string = view.type3(@"+++");
-//    NSLog(@"%@", string);
+    NSString *string = view.type3(@"+++");
+    NSLog(@"%@", string);
 
 }
 
