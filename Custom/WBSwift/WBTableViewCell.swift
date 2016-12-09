@@ -8,12 +8,19 @@
 
 import UIKit
 
+let CellHeight = 66.0
+
 class WBTableViewCell: UITableViewCell {
 
+    var iconImageView = UIImageView()
+    var nameLabel = UILabel()
+    
     public var dict : NSDictionary? {
         didSet {
             if (dict != nil) {
-                self.textLabel?.text = dict!["title"] as? String
+
+                self.nameLabel.text = dict!["title"] as? String
+                self.iconImageView.setImageWith(NSURL(string :(dict!["titleimg"] as? String)!) as URL!, placeholderImage: UIImage(named:"placeholder.png"))
             }
         }
     }
@@ -33,6 +40,12 @@ class WBTableViewCell: UITableViewCell {
     
     func setUpviews() {
         
+        self.iconImageView.frame = CGRect(x: 15, y: 10, width: CellHeight-20, height: CellHeight-20)
+        self.addSubview(self.iconImageView)
+        
+        self.nameLabel.frame = CGRect(x: 88, y: 15, width: 222, height: CellHeight-30)
+        self.addSubview(self.nameLabel)
+
         
     }
 }

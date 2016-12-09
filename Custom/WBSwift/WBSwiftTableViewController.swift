@@ -89,6 +89,9 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
         return self.dataArray.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(CellHeight)
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell:WBTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "cell") as? WBTableViewCell)!
