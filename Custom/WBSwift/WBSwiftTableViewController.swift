@@ -15,11 +15,9 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
     var tempArray = NSArray()
     var pageNumber = 1
     
-    var refreshControl:ZJRefreshControl!
-    
+    var refreshControl:WBRefreshControl!
     
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
@@ -33,7 +31,7 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
     
     func setupRefreshAndLoad() {
         
-        refreshControl = ZJRefreshControl(scrollView: self.myTableView,refreshBlock: {
+        refreshControl = WBRefreshControl(scrollView: self.myTableView,refreshBlock: {
             self.pageNumber = 1
             self.getDataWithPage(page: self.pageNumber)
         },loadmoreBlock: {
@@ -77,8 +75,6 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
         self.myTableView.dataSource = self
         self.view.addSubview(self.myTableView)
         self.myTableView.register(WBTableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

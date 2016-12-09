@@ -1,12 +1,12 @@
 //
-//  ZJRefreshControl.swift
-//  ecms_ios
+//  WBRefreshControl.swift
+//  Custom
 //
-//  Created by PSVMC on 15/7/4.
-//
+//  Created by 李伟宾 on 2016/12/1.
+//  Copyright © 2016年 liweibin. All rights reserved.
 //
 import UIKit
-class ZJRefreshControl: UIControl {
+class WBRefreshControl: UIControl {
     
     //一些常量
     fileprivate var totalViewHeight:CGFloat  =   568;
