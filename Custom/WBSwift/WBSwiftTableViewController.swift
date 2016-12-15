@@ -10,12 +10,10 @@ import UIKit
 
 class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var myTableView = UITableView()
+    var tableView = UITableView()
     var dataArray = NSMutableArray()
     var tempArray = NSArray()
     var pageNumber = 1
-    
-    var refreshControl:WBRefreshControl!
     
 
     override func viewDidLoad() {
@@ -23,22 +21,25 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
         self.view.backgroundColor = UIColor.white
         
         setupTableView()
-        setupRefreshAndLoad()
         
-        //首次进入页面加载数据
-        self.getDataWithPage(page: self.pageNumber)
+        setupRefreshAndLoad()
     }
     
     func setupRefreshAndLoad() {
-        
-        refreshControl = WBRefreshControl(scrollView: self.myTableView,refreshBlock: {
+
+        self.tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
+            self.tableView.mj_footer.endRefreshing()
             self.pageNumber = 1
             self.getDataWithPage(page: self.pageNumber)
-        },loadmoreBlock: {
+        })
+        
+        self.tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+            self.tableView.mj_header.endRefreshing()
             self.pageNumber += 1
             self.getDataWithPage(page: self.pageNumber)
-        });
-        refreshControl.setTopOffset(-64);
+        })
+        
+        self.tableView.mj_header.beginRefreshing()
     }
     
     func getDataWithPage(page : NSInteger) {
@@ -47,6 +48,7 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
         let parameters = ["type" : 2, "p" : page]
         
         WBNetwork.shareInstance.request(requestType: .GET, url: port1, params: parameters, success: {(responseObj) in
+            print(responseObj!)
             
             if responseObj?["code"] as? Int == 0 {
                 
@@ -59,22 +61,25 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
                     self.dataArray.addObjects(from: [value])
                 }
                 
-                self.myTableView.reloadData()
+                self.tableView.reloadData()
             }
             
-        }) {(error) in print(error!) }
-        
-        self.refreshControl.endRefreshing();
-        self.refreshControl.endLoadingmore();
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
+            
+        }) {(error) in
+            print(error!)
+        }
+   
     }
     
     func setupTableView() {
         
-        self.myTableView = UITableView(frame: self.view.frame, style:UITableViewStyle.plain)
-        self.myTableView.delegate = self
-        self.myTableView.dataSource = self
-        self.view.addSubview(self.myTableView)
-        self.myTableView.register(WBTableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView = UITableView(frame: self.view.frame, style:UITableViewStyle.plain)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.view.addSubview(self.tableView)
+        self.tableView.register(WBTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -102,6 +107,18 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
         let controller = WBSwiftViewController()
         controller.title = (self.dataArray[indexPath.row] as! NSDictionary)["title"] as? String
         self.navigationController?.pushViewController(controller, animated: true)
+        
+        
+        //        for view in (cell?.contentView.subviews)! as [UIView] {
+        //            if view.tag == 8989 {
+        //                for subView in view.subviews {
+        //                    if let textField = subView as? UITextField {
+        //                        textField.text = String(NSInteger(textField.text!)! + (type == 1 ? 1 : -1))
+        //                        self.numValueChanged(textField: textField)
+        //                    }
+        //                }
+        //            }
+        //        }
     }
 
     

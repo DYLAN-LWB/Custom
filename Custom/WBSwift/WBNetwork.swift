@@ -10,7 +10,7 @@ import UIKit
 
 
 let UserID    = "3"
-let UserKey   = "de7f1f42282da6c604a882350909fd94"
+let UserKey   = "79bb65f64755922c7e0827d9e83d013d"
 let BasicUrl  = "http://shop.51titi.net"   // 线上测试环境
 
 func RequestName(name:String) -> String {

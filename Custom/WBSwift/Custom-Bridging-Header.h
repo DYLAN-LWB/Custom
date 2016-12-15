@@ -12,7 +12,7 @@
  在Swift Compiler - General 设置目录为 $(PROJECT_DIR)/Custom/WBSwift/Custom-Bridging-Header.h
  
  
- OC调用swift时 引入头文件#import "Custom-Swift.h"
+ OC调用swift时 引入头文件#import "项目名-Swift.h"
  
  */
 #ifndef Custom_Bridging_Header_h
@@ -22,5 +22,6 @@
 #import "Common.h"
 #import "Network.h"
 #import "AFNetworking.h"
-
+#import "MJRefresh.h"
 #endif /* Custom_Bridging_Header_h */
+

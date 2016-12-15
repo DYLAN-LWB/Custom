@@ -29,7 +29,6 @@
 		521C143B1DC6DB6C00CD78B3 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 521C14271DC6DB6C00CD78B3 /* UIView+MJExtension.m */; };
 		5236E2601DD0475900D8B1B1 /* WBBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5236E25F1DD0475900D8B1B1 /* WBBlockViewController.m */; };
 		5236E2631DD0508A00D8B1B1 /* WBBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5236E2621DD0508A00D8B1B1 /* WBBlockView.m */; };
-		523E1D751DF9409F0038F43D /* WBRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E1D741DF9409F0038F43D /* WBRefreshControl.swift */; };
 		527F32E41DC33B420023F4B7 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F32E31DC33B420023F4B7 /* ListViewController.m */; };
 		527F32E71DC33B570023F4B7 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F32E61DC33B570023F4B7 /* ListTableViewCell.m */; };
 		527F32EA1DC33B630023F4B7 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F32E91DC33B630023F4B7 /* ListModel.m */; };
@@ -167,7 +166,6 @@
 		5236E25F1DD0475900D8B1B1 /* WBBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBlockViewController.m; sourceTree = "<group>"; };
 		5236E2611DD0508A00D8B1B1 /* WBBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBlockView.h; sourceTree = "<group>"; };
 		5236E2621DD0508A00D8B1B1 /* WBBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBlockView.m; sourceTree = "<group>"; };
-		523E1D741DF9409F0038F43D /* WBRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRefreshControl.swift; sourceTree = "<group>"; };
 		527F32E21DC33B420023F4B7 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		527F32E31DC33B420023F4B7 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		527F32E51DC33B570023F4B7 /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
@@ -723,7 +721,6 @@
 				52C2D9AB1DE54376003A80B3 /* WBNetwork.swift */,
 				52E842EE1DE800500018FC3E /* WBSwiftTableViewController.swift */,
 				52AA5D821DF00E9A00452A35 /* WBTableViewCell.swift */,
-				523E1D741DF9409F0038F43D /* WBRefreshControl.swift */,
 				52D03AA81DE3F14900EEF571 /* WBSwiftViewController.swift */,
 				52D03AAB1DE41F2100EEF571 /* WBSwiftView.swift */,
 			);
@@ -914,7 +911,6 @@
 				521C142F1DC6DB6C00CD78B3 /* MJRefreshAutoStateFooter.m in Sources */,
 				52B0BB111DC337940068B412 /* MJPropertyKey.m in Sources */,
 				52B0BB131DC337940068B412 /* NSObject+MJClass.m in Sources */,
-				523E1D751DF9409F0038F43D /* WBRefreshControl.swift in Sources */,
 				521C14321DC6DB6C00CD78B3 /* MJRefreshBackStateFooter.m in Sources */,
 				52A4DB461DAF6FF70034254C /* main.m in Sources */,
 				52B0BB171DC337940068B412 /* NSString+MJExtension.m in Sources */,
