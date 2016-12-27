@@ -48,7 +48,7 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
         let parameters = ["type" : 2, "p" : page]
         
         WBNetwork.shareInstance.request(requestType: .GET, url: port1, params: parameters, success: {(responseObj) in
-            print(responseObj!)
+//            print(responseObj!)
             
             if responseObj?["code"] as? Int == 0 {
                 
@@ -56,10 +56,13 @@ class WBSwiftTableViewController: UIViewController, UITableViewDelegate, UITable
                     self.dataArray.removeAllObjects()
                 }
                 
+                
                 self.tempArray = responseObj!["data"]! as! NSArray
                 for ( _ , value) in self.tempArray.enumerated() {
                     self.dataArray.addObjects(from: [value])
                 }
+                print(self.dataArray)
+
                 
                 self.tableView.reloadData()
             }
