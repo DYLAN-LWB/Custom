@@ -22,7 +22,7 @@
 #define WBFloat(str)    [WBString(str) floatValue]
 
 #define WBShowToastMessage(msg) [WBAlertView showMessageToast:msg toView:self.view]
-#define ErrorMsg        @"服务器连接失败"
+#define ErrorMsg @"服务器连接失败"
 
 
 #import "UIImageView+WebCache.h"

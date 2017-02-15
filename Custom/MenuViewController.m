@@ -16,7 +16,7 @@
 
 #import "WBAlertView.h"
 
-
+#import "WBCustomTextField.h"
 
 #import "Custom-Swift.h"
 
@@ -31,9 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.title = @"菜单";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor redColor];
 
     self.menuArray = @[@"WBAlertView",  @"WBFullScreenImage", @"WBDropDownMenu", @"WBImageBrowser", @"WBPickerView", @"WBShareView",@"WBModel",@"WBBlock",@"WBSwift"];
      
@@ -41,6 +43,19 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
+
+    NSLog(@"--%@", [self.navigationController class]);
+    NSLog(@"333");
+    
+    
+    WBCustomTextField *customTextField = [[WBCustomTextField alloc] initWithFrame:CGRectMake(100, 150, 222, 35)];
+    customTextField.tintColor = [UIColor redColor];
+    customTextField.placeholderText = @"占位字";
+    customTextField.placeholderColor = [UIColor blueColor];
+    customTextField.backgroundColor = [UIColor lightGrayColor];
+    customTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 1)];
+    customTextField.leftViewMode = UITextFieldViewModeAlways;
+    [self.view addSubview:customTextField];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
