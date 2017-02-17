@@ -29,7 +29,6 @@
 		521C143B1DC6DB6C00CD78B3 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 521C14271DC6DB6C00CD78B3 /* UIView+MJExtension.m */; };
 		5236E2601DD0475900D8B1B1 /* WBBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5236E25F1DD0475900D8B1B1 /* WBBlockViewController.m */; };
 		5236E2631DD0508A00D8B1B1 /* WBBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5236E2621DD0508A00D8B1B1 /* WBBlockView.m */; };
-		5242AA871E544DB8002E37AA /* WBCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5242AA861E544DB8002E37AA /* WBCustomTextField.m */; };
 		527F32E41DC33B420023F4B7 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F32E31DC33B420023F4B7 /* ListViewController.m */; };
 		527F32E71DC33B570023F4B7 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F32E61DC33B570023F4B7 /* ListTableViewCell.m */; };
 		527F32EA1DC33B630023F4B7 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F32E91DC33B630023F4B7 /* ListModel.m */; };
@@ -167,8 +166,6 @@
 		5236E25F1DD0475900D8B1B1 /* WBBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBlockViewController.m; sourceTree = "<group>"; };
 		5236E2611DD0508A00D8B1B1 /* WBBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBlockView.h; sourceTree = "<group>"; };
 		5236E2621DD0508A00D8B1B1 /* WBBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBlockView.m; sourceTree = "<group>"; };
-		5242AA851E544DB8002E37AA /* WBCustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBCustomTextField.h; sourceTree = "<group>"; };
-		5242AA861E544DB8002E37AA /* WBCustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBCustomTextField.m; sourceTree = "<group>"; };
 		527F32E21DC33B420023F4B7 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		527F32E31DC33B420023F4B7 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		527F32E51DC33B570023F4B7 /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
@@ -432,15 +429,6 @@
 			path = WBBlock;
 			sourceTree = "<group>";
 		};
-		5242AA841E544D79002E37AA /* WBTextField */ = {
-			isa = PBXGroup;
-			children = (
-				5242AA851E544DB8002E37AA /* WBCustomTextField.h */,
-				5242AA861E544DB8002E37AA /* WBCustomTextField.m */,
-			);
-			path = WBTextField;
-			sourceTree = "<group>";
-		};
 		527F32E11DC33B2B0023F4B7 /* WBModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,7 +498,6 @@
 				52B0BB2C1DC339DB0068B412 /* RequestManager.m */,
 				52A4DB5B1DAF707A0034254C /* MenuViewController.h */,
 				52A4DB5C1DAF707A0034254C /* MenuViewController.m */,
-				5242AA841E544D79002E37AA /* WBTextField */,
 				52D03AA71DE3F12E00EEF571 /* WBSwift */,
 				5236E25D1DD0473C00D8B1B1 /* WBBlock */,
 				52D7DC771DC88ACC00BE710E /* WBExtension */,
@@ -900,7 +887,6 @@
 				52C95B241DC03C0F0073D90A /* WBFullScreenImage.m in Sources */,
 				521C14351DC6DB6C00CD78B3 /* MJRefreshStateHeader.m in Sources */,
 				52B0BB141DC337940068B412 /* NSObject+MJCoding.m in Sources */,
-				5242AA871E544DB8002E37AA /* WBCustomTextField.m in Sources */,
 				527F32F81DC343E80023F4B7 /* ProgressHUD.m in Sources */,
 				52C95BC81DC044880073D90A /* WBDropDownMenuViewController.m in Sources */,
 				521C14381DC6DB6C00CD78B3 /* NSBundle+MJRefresh.m in Sources */,
